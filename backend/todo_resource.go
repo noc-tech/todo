@@ -5,7 +5,6 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
-	"github.com/kr/pretty"
 	"github.com/noc-tech/todo/datastore"
 )
 
@@ -18,7 +17,6 @@ func (rs todoResource) Routes() chi.Router {
 	r := chi.NewRouter()
 	r.Use(func(next http.Handler) http.Handler {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			pretty.Println("test")
 			w.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000")
 			w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
 			w.Header().Set("Access-Control-Allow-Headers", "Accept, Authorization, Content-Type, X-CSRF-Token")

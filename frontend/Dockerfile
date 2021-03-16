@@ -1,6 +1,6 @@
 FROM node:alpine as builder
 RUN mkdir /app
-ADD . /app/
+ADD ./frontend /app/
 WORKDIR /app
 RUN yarn install && yarn build
 

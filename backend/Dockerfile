@@ -1,8 +1,7 @@
 FROM golang:alpine as builder
 RUN mkdir /build
-ADD . /build/
+ADD ./backend /build/
 WORKDIR /build
-# RUN yarn install && yarn build
 RUN go mod download
 RUN GOOS=linux go build -o main .
 FROM alpine
