@@ -1,0 +1,12 @@
+version: "3"
+services:
+  frontend:
+    image: ghcr.io/noc-tech/todo/frontend:latest
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+  backend:
+    image: ghcr.io/noc-tech/todo/backend:latest
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
